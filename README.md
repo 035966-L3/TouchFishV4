@@ -1,13 +1,18 @@
 > [!WARNING]
 > **这是 TouchFish v4 版本，自 v4 开始不再向前兼容 v1 - v3。**
 >
-> **根据规划，此版本（v4.11.0）是 TouchFish v4 的最后一个子版本。TouchFish v5 正在施工，[链接](https://github.com/2044-space-elevator/TFV5_server)。下一版本预计将进入 v5。**
+> **根据规划：**
+>
+> - **v4.3.3 为 v4 的最后一个兼容 Astra v2.2.0 的常规更新。**
+> - **v4.7.0 为 v4 的最后一个常规更新，该版本不兼容 Astra v2.2.0。**
+> - **v4.x.x 为 v4 的最后一个安全更新，该版本兼容 Astra v2.2.0，具体版本待定。**
+> - **v4.x.x 开始的更新为 #86 的前置更新。**
 
 > [!IMPORTANT]
 > **重要通知：贡献者须知**
 >
 > 感谢您对 TouchFish 项目的关注和贡献！为避免您的努力付诸东流，请在提交 PR 前务必仔细阅读
-> **[贡献者指南](https://github.com/2044-space-elevator/TouchFish/blob/main/CONTRIBUTING.md)**，
+> **[贡献者指南](https://github.com/wwyfqwq/TouchFishV4/blob/main/CONTRIBUTING.md)**，
 > 确保您的贡献符合项目规范。感谢您的配合！
 
 # TouchFish - 局域网聊天解决方案
@@ -44,7 +49,7 @@
 > 
 > 不建议下载预编译的二进制文件，建议通过源代码部署：
 > 
-> `wget https://github.com/2044-space-elevator/TouchFish/releases/download/v4.11.0/LTS.py && python3 LTS.py`
+> `wget https://github.com/wwyfqwq/TouchFishV4/releases/download/v4.11.0/LTS.py && python3 LTS.py`
 > 
 > （也可以通过 @ILoveScratch2 提供的镜像站，但是截至 2026/7/13 只更新到了 v4.7.0 版本：
 >
@@ -99,7 +104,7 @@
 
 > [!WARNING]
 > 需要启用 "任何来源" 应用运行权限：  
-> 系统设置 → 安全性与隐私 → 安全性 → 允许以下来源的应用程序 → 选择 "任何来源"
+> 系统设置 -> 安全性与隐私 -> 安全性 -> 允许以下来源的应用程序 -> 选择 "任何来源"
 
 ### Linux
 
@@ -113,11 +118,11 @@
 
 ### 官方源（稳定通道）
 
-**GitHub**: [GitHub Release](/2044-space-elevator/TouchFish/release)
+**GitHub**: [GitHub Release](/wwyfqwq/TouchFishV4/release)
 
 ### 官方源（开发通道）
 
-**GitHub**: [Development Build](/2044-space-elevator/TouchFish/releases/tag/dev-build)
+**GitHub**: [Development Build](/wwyfqwq/TouchFishV4/releases/tag/dev-build)
 
 > [!WARNING]
 > 请不要在生产环境中使用开发版，除非你知道如何操作和排除 Bug
@@ -132,17 +137,17 @@
 
 TouchFish 拥有丰富的衍生版本生态系统，满足不同用户需求：
 
-**这里的大部分发行版都暂不支持 v4 版本，如需使用请前往 [Release](https://github.com/2044-space-elevator/TouchFish/releases) 页面下载旧版本（v3 及以前）**
+**这里的大部分发行版都暂不支持 v4 版本，如需使用请前往 [Release](https://github.com/wwyfqwq/TouchFishV4/releases) 页面下载旧版本（v3 及以前）**
 
 | 版本名称 | 简称 | 主要作者 | 链接 | 对 v1-3 支持 | 语言 | 平台支持 | 特色 | 对 v4 支持
 |---------|------|----------|----|-----|------|----------|------|--|
-| LTS | TF | @2044-space-elevator, @035966-L3 和其他 LTS 贡献者 | [github](#发行版本生态), [mirror](https://mirror.ilovescratch.us.ci/TouchFish/LTS/) | ✅ | Python | Win, macOS, Linux | 根版本，长期支持 | ✅ |
-| Astra | TFA | @ILoveScratch2 | [github](https://github.com/ILoveScratch2/TouchFish-Astra), [mirror](https://mirror.ilovescratch.us.ci/TouchFish/Astra/) | ✅ | Dart | 全平台 (UI) | 最佳发行版之一，现代化 UI | ✅ |
-| UI Remake | TFUR | @pztsdy | [github](https://github.com/pztsdy/touchfish_ui_remake), [main-mirror](https://mirror.ilovescratch.us.ci/TouchFish/UI%20Remake/), [update-branch](https://github.com/pztsdy/touchfish_ui_remake/tree/update) | ✅ | Node.JS | Win, macOS*, Linux* | 现代化 UI，Markdown，代码高亮（生命周期已终止~~即停更~~） | ❌ |
-| Plus | Plus | @ayf2192538031 | [github](https://github.com/2044-space-elevator/TouchFishPlus), [mirror](https://mirror.ilovescratch.us.ci/TouchFish/Plus%20(%E6%BA%90%E4%BB%A3%E7%A0%81)/) | ❌ | Python | Win*, macOS*, Linux* | 增强功能集 | ❌ |
-| Pro | Pro | @BoXueDuoCai | [github](https://github.com/PigeonTechGroup/TouchFishPro), [mirror](https://mirror.ilovescratch.us.ci/TouchFish/Pro%20(%E6%BA%90%E4%BB%A3%E7%A0%81)/) | ✅ | Python | Win*, macOS*, Linux* | Markdown，LaTeX，用户高亮 | ❌ |
-| Android | (已废除) | @pztsdy | [github](https://github.com/pztsdy/TouchFish-for-mobile), [mirror](https://mirror.ilovescratch.us.ci/TouchFish/Mobile%20%EF%BC%88%E4%B8%8D%E6%8E%A8%E8%8D%90%EF%BC%89/) | ✅ | Kotlin | Android | 移动端（有使用限制）（已停更） | ❌ |
-| More | More | @xie2870 | [github](https://github.com/xie2870/touchfish_more), [gitee](https://gitee.com/xx2870/touchfish_more), [mirror](https://mirror.ilovescratch.us.ci/TouchFish/More(Lite)/) | ✅ | Python | Win*, macOS*, Linux (UI) | 性能优化，镜像站 | ❌ |
+| LTS | TF | @wwyfqwq, @035966-L3 和其他 LTS 贡献者 | [github](#发行版本生态), [mirror](https://mirror.ilovescratch.us.ci/TouchFish/LTS/) | Yes | Python | Win, macOS, Linux | 根版本，长期支持 | Yes |
+| Astra | TFA | @ILoveScratch2 | [github](https://github.com/ILoveScratch2/TouchFish-Astra), [mirror](https://mirror.ilovescratch.us.ci/TouchFish/Astra/) | Yes | Dart | 全平台 (UI) | 最佳发行版之一，现代化 UI | Yes |
+| UI Remake | TFUR | @pztsdy | [github](https://github.com/pztsdy/touchfish_ui_remake), [main-mirror](https://mirror.ilovescratch.us.ci/TouchFish/UI%20Remake/), [update-branch](https://github.com/pztsdy/touchfish_ui_remake/tree/update) | Yes | Node.JS | Win, macOS*, Linux* | 现代化 UI，Markdown，代码高亮（生命周期已终止~~即停更~~） | No |
+| Plus | Plus | @ayf2192538031 | [github](https://github.com/wwyfqwq/TouchFishPlus), [mirror](https://mirror.ilovescratch.us.ci/TouchFish/Plus%20(%E6%BA%90%E4%BB%A3%E7%A0%81)/) | No | Python | Win*, macOS*, Linux* | 增强功能集 | No |
+| Pro | Pro | @BoXueDuoCai | [github](https://github.com/PigeonTechGroup/TouchFishPro), [mirror](https://mirror.ilovescratch.us.ci/TouchFish/Pro%20(%E6%BA%90%E4%BB%A3%E7%A0%81)/) | Yes | Python | Win*, macOS*, Linux* | Markdown，LaTeX，用户高亮 | No |
+| Android | (已废除) | @pztsdy | [github](https://github.com/pztsdy/TouchFish-for-mobile), [mirror](https://mirror.ilovescratch.us.ci/TouchFish/Mobile%20%EF%BC%88%E4%B8%8D%E6%8E%A8%E8%8D%90%EF%BC%89/) | Yes | Kotlin | Android | 移动端（有使用限制）（已停更） | No |
+| More | More | @xie2870 | [github](https://github.com/xie2870/touchfish_more), [gitee](https://gitee.com/xx2870/touchfish_more), [mirror](https://mirror.ilovescratch.us.ci/TouchFish/More(Lite)/) | Yes | Python | Win*, macOS*, Linux (UI) | 性能优化，镜像站 | No |
 
 > 标 * 的版本可能需要自行编译、直接运行代码或缺少预编译包。
 

@@ -1,6 +1,7 @@
 __pycache__
 config.json
 TouchFishFiles
+TouchFishLogs
 log.ndjson
 src/
 pkg/

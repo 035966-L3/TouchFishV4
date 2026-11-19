@@ -85,7 +85,7 @@ jobs:
           body: |
             这是一个基于 `main` 分支最新代码的自动版本。
 
-            不要被左侧的时间骗了！本Release会不断随着 Commit 更新。
+            不要被左侧的时间骗了！本 Release 会不断随着 Commit 更新。
 
             Commit SHA: ${{ github.sha }}
 
