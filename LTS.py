@@ -1003,10 +1003,22 @@ def check_config(tmp_config, diff_key=None, diff_value=None):
 			return "服务端管理员的用户名不应为空。"
 		if item == "general.max_connections" and tmp_object > 128:
 			return "最大在线连接数应为不大于 128 的正整数。"
-	if len(tmp_config["gate"]["enter_hint"]) > tmp_config["message"]["max_length"]:
+	if diff_key == "gate.enter_hint":
+		gate_enter_hint = diff_value
+	else:
+		gate_enter_hint = tmp_config["gate"]["enter_hint"]
+	if diff_key == "message.max_length":
+		message_max_length = diff_value
+	else:
+		message_max_length = tmp_config["message"]["max_length"]
+	if diff_key == "ban.words":
+		ban_words = diff_value
+	else:
+		ban_words = tmp_config["ban"]["words"]
+	if len(gate_enter_hint) > message_max_length:
 		return "输入的进入提示太长，超出了参数 message.max_length 设定的限制。"
-	for word in tmp_config["ban"]["words"]:
-		if word in tmp_config["gate"]["enter_hint"]:
+	for word in ban_words:
+		if word in gate_enter_hint:
 			return "输入的进入提示包含屏蔽词：" + word
 	return None # 配置没有问题
 
