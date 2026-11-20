@@ -48,7 +48,7 @@
 > 
 > `wget https://github.com/wwyfqwq/TouchFishV4/releases/download/v4.12.1/LTS.py && python3 LTS.py`
 > 
-> （也可以通过 @ILoveScratch2 提供的镜像站，但是截至 2026/7/13 只更新到了 v4.7.0 版本：
+> （也可以通过 @ILoveScratch2 提供的镜像站，但是截至 2026/11/20 只更新到了 v4.7.0 版本：
 >
 > `wget https://mirror.ilovescratch.us.ci/api/net/183301217/LTS.py && python3 LTS.py`）
 
