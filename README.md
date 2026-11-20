@@ -1,12 +1,7 @@
 > [!WARNING]
 > **这是 TouchFish v4 版本，自 v4 开始不再向前兼容 v1 - v3。**
 >
-> **根据规划：**
->
-> - **v4.3.3 为 v4 的最后一个兼容 Astra v2.2.0 的常规更新。**
-> - **v4.7.0 为 v4 的最后一个常规更新，该版本不兼容 Astra v2.2.0。**
-> - **v4.x.x 为 v4 的最后一个安全更新，该版本兼容 Astra v2.2.0，具体版本待定。**
-> - **v4.x.x 开始的更新为 #86 的前置更新。**
+> **根据规划，此版本（v4.12.0）是 TouchFish v4 的最后一个子版本。TouchFish v5 正在施工，[链接](https://github.com/wwyfqwq/TFV5_server)。下一版本预计将进入 v5。**
 
 > [!IMPORTANT]
 > **重要通知：贡献者须知**
@@ -49,7 +44,7 @@
 > 
 > 不建议下载预编译的二进制文件，建议通过源代码部署：
 > 
-> `wget https://github.com/wwyfqwq/TouchFishV4/releases/download/v4.11.0/LTS.py && python3 LTS.py`
+> `wget https://github.com/wwyfqwq/TouchFishV4/releases/download/v4.12.0/LTS.py && python3 LTS.py`
 > 
 > （也可以通过 @ILoveScratch2 提供的镜像站，但是截至 2026/7/13 只更新到了 v4.7.0 版本：
 >

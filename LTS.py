@@ -795,7 +795,10 @@ online_count = 1
 latest_date = "1949-10-01"
 buffer = ""
 bell_countdown = 0
-shortcut = "D"
+if platform.system() == "Windows":
+	shortcut = "C"
+else:
+	shortcut = "D"
 exit_flag = False
 log_queue = queue.Queue()
 receive_queue = queue.Queue()
@@ -991,6 +994,15 @@ def print_message(message):
 	first_line += dye("[" + message["time"][11:19] + "]", "black")
 	if message["order"] > 0:
 		first_line += dye(" (#" + str(message["order"]) + ")", "black")
+	if message["from"] == my_uid:
+		first_line += dye(" [您发送的]", "blue")
+	if message["to"] == my_uid:
+		first_line += dye(" [发给您的]", "blue")
+	try:
+		if message["filename"]:
+			first_line += dye(" [文件]", "red")
+	except KeyError:
+		pass
 	if message["to"] == -2:
 		# 增加 bell_countdown 的值以请求
 		# thread_output 完成额外的 4 次响铃，
@@ -1000,6 +1012,8 @@ def print_message(message):
 		# 为 60 的时刻，第 5 次响铃出现在 6 秒后
 		# bell_countdown 为 15 的时刻
 		bell_countdown += 75
+	if message["to"] >= 0:
+		first_line += dye(" [私聊]", "green")
 	first_line += " "
 	first_line += dye("@", "black")
 	if message["from"] == my_uid:
