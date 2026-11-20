@@ -2046,32 +2046,32 @@ def do_flood(arg=None):
 	global exit_flag
 	
 	if not arg:
-		printc("参数错误：应当给出至少 1 个参数。", "black")
+		printc("参数错误：应当给出至少 1 个参数。")
 		return
 	arg = arg.split(" ", 1)
 	if arg[0] in ABBREVIATION_TABLE.keys():
 		arg[0] = ABBREVIATION_TABLE[arg[0]]
 	if not arg[0] in FLOOD_MESSAGE_TYPES.keys():
-		printc("参数错误：第一个参数不在支持的指令名称中。", "black")
+		printc("参数错误：第一个参数不在支持的指令名称中。")
 		return
 	if arg[0] == "broadcast" and not users[my_uid]["status"] in ["Admin", "Root"]:
-		printc("只有处于 Admin 或 Root 状态的用户有权执行该操作。", "black")
+		printc("只有处于 Admin 或 Root 状态的用户有权执行该操作。")
 		return
 	if arg[0] == "whisper":
 		if len(arg) == 1:
-			printc("参数错误：第一个参数为 whisper 时，应当给出恰好 2 个参数。", "black")
+			printc("参数错误：第一个参数为 whisper 时，应当给出恰好 2 个参数。")
 			return
 		if not config["message"]["allow_private"]:
-			printc("此聊天室目前不允许发送私聊消息。", "black")
+			printc("此聊天室目前不允许发送私聊消息。")
 			return
 		arg[1] = parse_username(arg[1], ["Online", "Admin", "Root"])
 		try:
 			arg[1] = int(arg[1])
 		except:
-			printc("参数错误：用户解析失败，只能对状态处于 Online、Admin、Root 中的某一项的用户操作。", "black")
+			printc("参数错误：用户解析失败，只能对状态处于 Online、Admin、Root 中的某一项的用户操作。")
 			return
 		if arg[1] == my_uid:
-			printc("不能向自己发送私聊消息。", "black")
+			printc("不能向自己发送私聊消息。")
 			return
 	
 	message_type = FLOOD_MESSAGE_TYPES[arg[0]]
@@ -2086,34 +2086,34 @@ def do_flood(arg=None):
 			print("\033[0m", end="", flush=True)
 			return
 		if arg[0] == "broadcast" and not users[my_uid]["status"] in ["Admin", "Root"]:
-			printc("您失去了发送广播消息的权限，现在自动退出简易命令行模式。", "black")
+			printc("您失去了发送广播消息的权限，现在自动退出简易命令行模式。")
 			return
 		if arg[0] == "whisper":
 			if not config["message"]["allow_private"]:
-				printc("聊天室禁止了私聊消息的发送，现在自动退出简易命令行模式。", "black")
+				printc("聊天室禁止了私聊消息的发送，现在自动退出简易命令行模式。")
 				return
 			if not users[arg[1]]["status"] in ["Online", "Admin", "Root"]:
-				printc("您指定的私聊消息发送对象已经下线，现在自动退出简易命令行模式。", "black")
+				printc("您指定的私聊消息发送对象已经下线，现在自动退出简易命令行模式。")
 				return
 		
 		# 输出模式
 		try:
 			input()
 		except EOFError:
-			printc("您已经退出简易命令行模式。", "black")
+			printc("您已经退出简易命令行模式。")
 			return
 		except BaseException:
 			pass
 		
 		if arg[0] == "broadcast" and not users[my_uid]["status"] in ["Admin", "Root"]:
-			printc("您失去了发送广播消息的权限，现在自动退出简易命令行模式。", "black")
+			printc("您失去了发送广播消息的权限，现在自动退出简易命令行模式。")
 			return
 		if arg[0] == "whisper":
 			if not config["message"]["allow_private"]:
-				printc("聊天室禁止了私聊消息的发送，现在自动退出简易命令行模式。", "black")
+				printc("聊天室禁止了私聊消息的发送，现在自动退出简易命令行模式。")
 				return
 			if not users[arg[1]]["status"] in ["Online", "Admin", "Root"]:
-				printc("您指定的私聊消息发送对象已经下线，现在自动退出简易命令行模式。", "black")
+				printc("您指定的私聊消息发送对象已经下线，现在自动退出简易命令行模式。")
 				return
 		
 		# 变更为输入模式
@@ -2122,7 +2122,7 @@ def do_flood(arg=None):
 			message = input("\033[0m\033[1;30m> ")
 		except EOFError:
 			print()
-			printc("您已经退出简易命令行模式。", "black")
+			printc("您已经退出简易命令行模式。")
 			return
 		except BaseException:
 			message = ""
@@ -2135,7 +2135,10 @@ def do_flood(arg=None):
 		if arg[0] == "whisper":
 			message = str(arg[1]) + " " + message
 		now = eval("do_{}".format(arg[0]))
-		now(message, None, nothing, -1)
+		try:
+			now(message, None, nothing, -1)
+		except TypeError:
+			now(message)
 		print("\033[8;30m", end="", flush=True)
 		
 		# 变更为输出模式
