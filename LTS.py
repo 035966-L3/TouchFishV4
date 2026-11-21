@@ -1004,15 +1004,15 @@ def check_config(tmp_config, diff_key=None, diff_value=None):
 		if item == "general.max_connections" and tmp_object > 128:
 			return "最大在线连接数应为不大于 128 的正整数。"
 	if diff_key == "gate.enter_hint":
-		gate_enter_hint = diff_value
+		gate_enter_hint = eval(diff_value)
 	else:
 		gate_enter_hint = tmp_config["gate"]["enter_hint"]
 	if diff_key == "message.max_length":
-		message_max_length = diff_value
+		message_max_length = eval(diff_value)
 	else:
 		message_max_length = tmp_config["message"]["max_length"]
 	if diff_key == "ban.words":
-		ban_words = diff_value
+		ban_words = eval(diff_value)
 	else:
 		ban_words = tmp_config["ban"]["words"]
 	if len(gate_enter_hint) > message_max_length:
@@ -1701,6 +1701,9 @@ def do_ban(arg, verbose=printc, by=-1):
 		if arg[1] == "add":
 			if arg[2] in config["ban"]["words"]:
 				verbose("该屏蔽词已经在列表中出现了。")
+				return
+			if arg[2] in config["gate"]["enter_hint"]:
+				verbose("该屏蔽词已经在进入提示中出现了，请先修改进入提示。")
 				return
 			if side == "Server":
 				config["ban"]["words"].append(arg[2])
