@@ -2033,28 +2033,28 @@ def do_advertise(arg=None):
 	print()
 
 def do_dashboard(arg=None):
-	printc("=" * 76, "black")
-	printc("服务端版本：" + server_version, "black")
-	printc("您的 UID：" + str(my_uid), "black")
-	printc("您的状态：" + users[my_uid]["status"], "black")
-	printc("在线人数：{} / {}".format(online_count, config["general"]["max_connections"]), "black")
-	printc("聊天室参数及具体用户信息详见下表。", "black")
-	printc("=" * 76, "black")
+	printc("=" * 76)
+	printc("服务端版本：" + server_version)
+	printc("您的 UID：" + str(my_uid))
+	printc("您的状态：" + users[my_uid]["status"])
+	printc("在线人数：{} / {}".format(online_count, config["general"]["max_connections"]))
+	printc("聊天室参数及具体用户信息详见下表。")
+	printc("=" * 76)
 	printc(CONFIG_LIST.format(config["gate"]["enter_check"], \
 		config["message"]["allow_private"], config["message"]["max_length"], \
 		config["file"]["allow_any"], config["file"]["allow_private"], \
 		config["file"]["max_size"], config["ban"]["ip"], config["ban"]["words"], \
-		config["gate"]["enter_hint"]), "black")
-	printc("=" * 76, "black")
+		config["gate"]["enter_hint"]))
+	printc("=" * 76)
 	if "ip" in users[0]:
-		printc(" UID  IP                        状态      用户名", "black")
+		printc(" UID  IP                        状态      用户名")
 		for i in range(len(users)):
-			printc("{:>4}  {:<26}{:<10}{}".format(i, "{}:{}".format(users[i]["ip"][0], users[i]["ip"][1]), users[i]["status"], users[i]["username"]), "black")
+			printc("{:>4}  {:<26}{:<10}{}".format(i, "{}:{}".format(users[i]["ip"][0], users[i]["ip"][1]), users[i]["status"], users[i]["username"]))
 	else:
-		printc(" UID  状态      用户名", "black")
+		printc(" UID  状态      用户名")
 		for i in range(len(users)):
-			printc("{:>4}  {:<10}{}".format(i, users[i]["status"], users[i]["username"]), "black")
-	printc("=" * 76, "black")
+			printc("{:>4}  {:<10}{}".format(i, users[i]["status"], users[i]["username"]))
+	printc("=" * 76)
 
 def do_flood(arg=None):
 	global blocked
