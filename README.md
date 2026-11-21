@@ -3,7 +3,7 @@
 >
 > **根据规划，v4.7.0 是 TouchFish v4 的最后一个常规子版本，其后的更新为安全更新。**
 >
-> **安全更新结束后将进入下一版本（不是 v5，v5 在 [这里](https://github.com/wwyfqwq/TFV5_server)）。**
+> **安全更新结束后将进入下一版本（不是 v5，v5 在 [这里](https://github.com/wwyfqwq/TouchFishServer)）。**
 
 > [!IMPORTANT]
 > **重要通知：贡献者须知**
